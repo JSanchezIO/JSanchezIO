@@ -1,0 +1,33 @@
+{
+  "name": "@jsanchezio/monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "ci:build": "turbo run ci:build",
+    "ci:lint": "concurrently \"eslint . --ext .js,.ts,.tsx\" \"prettier --check .\"",
+    "ci:publish": "changeset publish && git push origin --tags",
+    "ci:test": "turbo run ci:test",
+    "ci:types": "turbo run ci:types",
+    "local:bump": "changeset add",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.0",
+    "@jsanchezio/eslint-config": "workspace:^",
+    "@jsanchezio/prettier-config": "workspace:^",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.36.0",
+    "husky": "^8.0.3",
+    "nano-staged": "^0.8.0",
+    "prettier": "^2.8.5",
+    "syncpack": "^9.8.4",
+    "turbo": "^1.8.5",
+    "typescript": "^5.0.2"
+  },
+  "packageManager": "pnpm@7.30.0",
+  "engines": {
+    "node": "^18.15.0",
+    "pnpm": "7.30.0"
+  }
+}

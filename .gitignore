@@ -1,0 +1,9 @@
+# Artifacts
+**/dist/
+**/test-results/
+
+# Caching
+**/.turbo/
+
+# Dependencies
+**/node_modules/

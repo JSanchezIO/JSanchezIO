@@ -1,0 +1,11 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
+  "access": "public",
+  "baseBranch": "main",
+  "changelog": ["@changesets/changelog-github", { "repo": "JSanchezIO/JSanchezIO" }],
+  "commit": ["@changesets/cli/commit", { "skipCI": false }],
+  "fixed": [],
+  "ignore": [],
+  "linked": [],
+  "updateInternalDependencies": "patch"
+}

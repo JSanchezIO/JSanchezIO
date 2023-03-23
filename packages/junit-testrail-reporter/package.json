@@ -1,0 +1,46 @@
+{
+  "name": "junit-testrail-reporter",
+  "version": "1.4.0",
+  "description": "Report JUnit test results to TestRail",
+  "keywords": [
+    "automation",
+    "junit",
+    "report",
+    "reporter",
+    "results",
+    "test",
+    "testrail"
+  ],
+  "homepage": "https://github.com/JSanchezIO/junit-testrail-reporter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JSanchezIO/junit-testrail-reporter.git"
+  },
+  "license": "MIT",
+  "author": "Juan Sanchez <11725911+JSanchezIO@users.noreply.github.com>",
+  "bin": {
+    "junit-testrail-reporter": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "scripts": {
+    "ci:build": "tsc",
+    "ci:types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dlenroc/testrail": "^1.6.0",
+    "chalk": "^4.1.2",
+    "glob": "^7.2.0",
+    "xml2js": "^0.4.23",
+    "yargs": "^17.4.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/node": "^18.15.5",
+    "@types/xml2js": "^0.4.9",
+    "@types/yargs": "^17.0.10",
+    "typescript": "^5.0.2"
+  }
+}

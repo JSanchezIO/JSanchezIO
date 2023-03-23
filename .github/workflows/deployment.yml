@@ -1,0 +1,33 @@
+name: Deployment
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy_sensitivity_converter_bot:
+    if: startsWith(github.ref_name, '@jsanchezio/sensitivity-converter-bot@')
+    concurrency: deploy-sensitivity-converter-bot
+    name: Deploy - Sensitivity Converter Bot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Login to Heroku
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku container:login
+        working-directory: ./apps/sensitivity-converter-bot
+
+      - name: Build and Push
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku container:push --app sensitivity-converter-bot worker
+        working-directory: ./apps/sensitivity-converter-bot
+
+      - name: Release
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku container:release --app sensitivity-converter-bot worker
+        working-directory: ./apps/sensitivity-converter-bot

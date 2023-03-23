@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "ci:build": {
+      "dependsOn": ["^ci:build"],
+      "inputs": ["package.json", "src/**", "tsconfig.json", "tsconfig.build.json"],
+      "outputs": ["dist/**"]
+    },
+    "ci:test": {
+      "dependsOn": ["^ci:build"],
+      "inputs": [
+        "package.json",
+        "src/**",
+        "tsconfig.json",
+        "tsconfig.build.json",
+        "vitest.config.ts"
+      ],
+      "outputs": ["test-results/**"]
+    },
+    "ci:types": {
+      "dependsOn": ["^ci:build"],
+      "inputs": ["package.json", "src/**", "tsconfig.json", "tsconfig.build.json"]
+    }
+  }
+}

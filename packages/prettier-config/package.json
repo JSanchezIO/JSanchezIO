@@ -1,0 +1,23 @@
+{
+  "name": "@jsanchezio/prettier-config",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "ci:build": "tsc"
+  },
+  "dependencies": {
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "prettier-plugin-packagejson": "^2.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.5",
+    "@types/prettier": "^2.7.2",
+    "prettier": "^2.8.5",
+    "typescript": "^5.0.2"
+  },
+  "peerDependencies": {
+    "prettier": "^2.8.5"
+  }
+}

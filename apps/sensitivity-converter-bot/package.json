@@ -1,0 +1,23 @@
+{
+  "name": "@jsanchezio/sensitivity-converter-bot",
+  "version": "2.0.2",
+  "private": true,
+  "author": "Juan Sanchez <11725911+JSanchezIO@users.noreply.github.com>",
+  "main": "./dist/index.js",
+  "scripts": {
+    "ci:build": "tsc --project tsconfig.build.json",
+    "ci:test": "vitest run",
+    "ci:types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^14.8.0",
+    "mathjs": "^11.7.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@types/node": "^18.15.5",
+    "typescript": "^5.0.2",
+    "vitest": "^0.29.7"
+  }
+}

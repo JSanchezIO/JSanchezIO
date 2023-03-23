@@ -1,0 +1,112 @@
+name: Continuous Integration & Release
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+  push:
+    branches:
+      - 'main'
+    tags-ignore:
+      - '\S*@v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  integration:
+    if:
+      github.event_name == 'pull_request' || contains(github.event.head_commit.message, 'RELEASING')
+      == false
+    name: Integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: pnpm
+          node-version-file: 'package.json'
+
+      - name: Setup Turborepo cache
+        uses: actions/cache@v3
+        with:
+          path: ./node_modules/.cache/turbo
+          key:
+            ${{ runner.os }}-turborepo-cache-${{ hashFiles('./turbo.json', '**/package.json',
+            '**/src/**/*.*', '**/tsconfig.json', '**/tsconfig.build.json', '**/vitest.config.ts') }}
+          restore-keys: |
+            ${{ runner.os }}-turborepo-cache-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm ci:build
+
+      - name: Run Linting Checks
+        run: pnpm ci:lint
+
+      - name: Run Type Checks
+        run: pnpm ci:types
+
+      - name: Run Tests
+        run: pnpm ci:test
+
+      - name: Report Test Results
+        uses: mikepenz/action-junit-report@v3
+        if: always()
+        with:
+          check_name: Test Results Report
+          report_paths: '**/test-results/unit-integration.xml'
+  release:
+    if: github.event_name == 'push' && github.ref_name == 'main'
+    concurrency: ${{ github.workflow }}-${{ github.ref }}
+    name: Release
+    needs: integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: pnpm
+          node-version-file: 'package.json'
+
+      - name: Setup Turborepo cache
+        uses: actions/cache@v3
+        with:
+          path: ./node_modules/.cache/turbo
+          key:
+            ${{ runner.os }}-turborepo-cache-${{ hashFiles('./turbo.json', '**/package.json',
+            '**/src/**/*.*', '**/tsconfig.json', '**/tsconfig.build.json', '**/vitest.config.ts') }}
+          restore-keys: |
+            ${{ runner.os }}-turborepo-cache-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm ci:build
+
+      - name: Create the release pull request and publish missing npm packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        uses: changesets/action@v1
+        with:
+          publish: pnpm ci:publish
