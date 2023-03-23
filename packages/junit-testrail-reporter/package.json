@@ -11,10 +11,10 @@
     "test",
     "testrail"
   ],
-  "homepage": "https://github.com/JSanchezIO/junit-testrail-reporter",
+  "homepage": "https://github.com/JSanchezIO/JSanchezIO/blob/main/packages/junit-testrail-reporter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JSanchezIO/junit-testrail-reporter.git"
+    "url": "https://github.com/JSanchezIO/JSanchezIO.git"
   },
   "license": "MIT",
   "author": "Juan Sanchez <11725911+JSanchezIO@users.noreply.github.com>",

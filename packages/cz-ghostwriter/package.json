@@ -9,10 +9,10 @@
     "ghostwriter",
     "preset"
   ],
-  "homepage": "https://github.com/JSanchezIO/cz-ghostwriter",
+  "homepage": "https://github.com/JSanchezIO/JSanchezIO/blob/main/packages/cz-ghostwriter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JSanchezIO/cz-ghostwriter.git"
+    "url": "https://github.com/JSanchezIO/JSanchezIO.git"
   },
   "license": "MIT",
   "author": "Juan Sanchez <11725911+JSanchezIO@users.noreply.github.com>",
