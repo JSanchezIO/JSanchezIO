@@ -1,3 +1,13 @@
+<h1 align="center" style="border-width: 2px;">JSanchezIO</h1>
+
+<div align="center">
+
+[![Continuous Integration & Release](https://github.com/JSanchezIO/JSanchezIO/actions/workflows/integration.yml/badge.svg)](https://github.com/JSanchezIO/JSanchezIO/actions/workflows/integration.yml)
+
+---
+
+</div>
+
 ## Apps
 
 - [Sensitivity Converter Bot](./apps/sensitivity-converter-bot)
