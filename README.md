@@ -4,8 +4,6 @@
 
 [![Continuous Integration & Release](https://github.com/JSanchezIO/JSanchezIO/actions/workflows/integration.yml/badge.svg)](https://github.com/JSanchezIO/JSanchezIO/actions/workflows/integration.yml)
 
----
-
 </div>
 
 ## Apps
