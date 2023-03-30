@@ -1,5 +1,13 @@
 # junit-testrail-reporter
 
+## 1.5.0
+
+### Minor Changes
+
+- [#4](https://github.com/JSanchezIO/JSanchezIO/pull/4)
+  [`3607502`](https://github.com/JSanchezIO/JSanchezIO/commit/360750254152a4fa46fdc31ad36685950b7a4318)
+  Thanks [@JSanchezIO](https://github.com/JSanchezIO)! - Support TestRail milestones
+
 ## 1.4.1
 
 ### Patch Changes
