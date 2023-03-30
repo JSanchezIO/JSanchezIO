@@ -89,15 +89,16 @@ yarn add --dev junit-testrail-reporter
 
 ## Configuration
 
-| Argument Name           | Environment Variable  | Description                                                               | Required | Default                                            |
-| ----------------------- | --------------------- | ------------------------------------------------------------------------- | -------- | -------------------------------------------------- |
-| `host` or `h`           | `TESTRAIL_HOST`       | The host of the TestRail server to send results to.                       | ✔️       | -                                                  |
-| `keepOpen`              | `TESTRAIL_KEEP_OPEN`  | If true, the reporter will leave the test runs open in TestRail.          | ❌       | `false`                                            |
-| -                       | `TESTRAIL_PASSWORD`   | The password, of the user, used to authenticate with TestRail.            | ✔️       | -                                                  |
-| `projectId`             | `TESTRAIL_PROJECT_ID` | The identifier of the TestRail project to send results to.                | ✔️       | -                                                  |
-| `resultsPattern` or `p` | -                     | The glob pattern for test result files that will be reported to TestRail. | ✔️       | -                                                  |
-| `runName` or `r`        | `TESTRAIL_RUN_NAME`   | A brief description used to identify the automated test run.              | ❌       | `"Automated Test Run via junit-testrail-reporter"` |
-| `username` or `u`       | `TESTRAIL_USERNAME`   | The username of the account to authenticate with TestRail.                | ✔️       | -                                                  |
+| Argument Name           | Environment Variable    | Description                                                               | Required | Default                                            |
+| ----------------------- | ----------------------- | ------------------------------------------------------------------------- | -------- | -------------------------------------------------- |
+| `host` or `h`           | `TESTRAIL_HOST`         | The host of the TestRail server to send results to.                       | ✔️       | -                                                  |
+| `keepOpen`              | `TESTRAIL_KEEP_OPEN`    | If true, the reporter will leave the test runs open in TestRail.          | ❌       | `false`                                            |
+| -                       | `TESTRAIL_PASSWORD`     | The password, of the user, used to authenticate with TestRail.            | ✔️       | -                                                  |
+| `milestoneId`           | `TESTRAIL_MILESTONE_ID` | The identifier, if any, of the milestone to group test results under.     | ✔️       | -                                                  |
+| `projectId`             | `TESTRAIL_PROJECT_ID`   | The identifier of the TestRail project to send results to.                | ✔️       | -                                                  |
+| `resultsPattern` or `p` | -                       | The glob pattern for test result files that will be reported to TestRail. | ✔️       | -                                                  |
+| `runName` or `r`        | `TESTRAIL_RUN_NAME`     | A brief description used to identify the automated test run.              | ❌       | `"Automated Test Run via junit-testrail-reporter"` |
+| `username` or `u`       | `TESTRAIL_USERNAME`     | The username of the account to authenticate with TestRail.                | ✔️       | -                                                  |
 
 <br />
 
