@@ -6,6 +6,9 @@ declare namespace JUnitTestRailReporter {
     /** If true, the reporter will leave the test runs open in TestRail. */
     keepOpen: boolean;
 
+    /** The identifier, if any, of the milestone to group test results under. */
+    milestoneId?: number | undefined;
+
     /** The password, of the user, used to authenticate with TestRail. */
     password: string;
 

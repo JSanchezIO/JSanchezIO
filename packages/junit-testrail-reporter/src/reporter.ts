@@ -212,6 +212,7 @@ export class Reporter {
         case_ids: [...testSuiteResults.distinctCaseIds],
         include_all: false,
         name: this._configuration.runName,
+        milestone_id: this._configuration.milestoneId,
         suite_id: testSuiteId,
       });
 

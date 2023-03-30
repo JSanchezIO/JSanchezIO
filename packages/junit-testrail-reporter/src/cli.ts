@@ -19,6 +19,11 @@ const execute = async () => {
       describe: 'The host of the TestRail server to send results to.',
       type: 'string',
     })
+    .option('milestoneId', {
+      default: process.env.TESTRAIL_MILESTONE_ID,
+      describe: 'The identifier, if any, of the milestone to group test results under.',
+      type: 'number',
+    })
     .option('keepOpen', {
       default: process.env.TESTRAIL_KEEP_OPEN === 'true',
       describe: 'If true, the reporter will leave the test runs open in TestRail.',
@@ -49,12 +54,17 @@ const execute = async () => {
     });
 
   const options: Partial<
-    Omit<JUnitTestRailReporter.Configuration, 'projectId'> & { projectId?: string | number }
+    Omit<JUnitTestRailReporter.Configuration, 'milestoneId' | 'projectId'> & {
+      milestoneId?: string | number;
+      projectId?: string | number;
+    }
   > = cli.parseSync(argv.slice(2));
 
   const reporter = new Reporter({
     host: options.host,
     keepOpen: options.keepOpen,
+    milestoneId:
+      options.milestoneId === undefined ? undefined : parseInt(options.milestoneId.toString(), 10),
     password: process.env.TESTRAIL_PASSWORD,
     projectId:
       options.projectId === undefined ? undefined : parseInt(options.projectId.toString(), 10),
