@@ -43,7 +43,7 @@ declare namespace JUnitTestRailReporter {
     skipped?: Array<string>;
   };
 
-  type Status = 'failed' | 'passed' | 'skipped';
+  type Status = 'failed' | 'passed';
 
   type TestCaseResult = { case_id: number; comment?: string; status_id: number };
 }

@@ -171,14 +171,14 @@ export class Reporter {
           }
 
           testCaseMatches.forEach((testCaseMatch) => {
+            if (currentCase.skipped !== undefined) {
+              return;
+            }
+
             const testCaseId = parseInt(testCaseMatch[1], 10);
 
             if (!currentCase.failure?.length) {
-              this._addTestCaseResult(
-                testSuiteId,
-                testCaseId,
-                currentCase.skipped === undefined ? 'passed' : 'skipped'
-              );
+              this._addTestCaseResult(testSuiteId, testCaseId, 'passed');
               return;
             }
 
