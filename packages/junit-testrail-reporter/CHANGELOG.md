@@ -1,5 +1,13 @@
 # junit-testrail-reporter
 
+## 1.5.1
+
+### Patch Changes
+
+- [`3a2bbe5`](https://github.com/JSanchezIO/JSanchezIO/commit/3a2bbe5db9090d8ee306775c182b279fa1dfa234)
+  Thanks [@JSanchezIO](https://github.com/JSanchezIO)! - Fix reporting when results contain a
+  skipped test
+
 ## 1.5.0
 
 ### Minor Changes
