@@ -73,7 +73,7 @@ importers:
   packages/commitlint-config-ghostwriter:
     dependencies:
       conventional-changelog-ghostwriter:
-        specifier: 1.1.3
+        specifier: 1.2.0
         version: link:../conventional-changelog-ghostwriter
       find-up:
         specifier: ^5.0.0
