@@ -16,7 +16,12 @@ type NonPresetConfig = { preset: undefined } & Ghostwriter.Models.Configuration 
 
 type PresetConfig = { preset: 'github' } & RequiredConfigProps & OptionalConfigProps;
 
-const SUPPORTED_FILES = ['.changelogrc.js', '.changelogrc.json', '.changelogrc'];
+const SUPPORTED_FILES = [
+  '.changelogrc.cjs',
+  '.changelogrc.js',
+  '.changelogrc.json',
+  '.changelogrc',
+];
 
 let cachedConfig: Ghostwriter.Models.Configuration;
 
@@ -35,9 +40,10 @@ export const getConfiguration = (
     );
   }
 
-  const config: NonPresetConfig | PresetConfig = configPath.endsWith('.js')
-    ? require(configPath)
-    : JSON.parse(readFileSync(configPath).toString());
+  const config: NonPresetConfig | PresetConfig =
+    configPath.endsWith('.cjs') || configPath.endsWith('.js')
+      ? require(configPath)
+      : JSON.parse(readFileSync(configPath).toString());
 
   if (!config.types?.length) {
     throw new Error('You must provide types');

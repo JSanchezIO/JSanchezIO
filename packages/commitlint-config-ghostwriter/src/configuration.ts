@@ -4,7 +4,12 @@
 import { sync as findUpSync } from 'find-up';
 import { readFileSync } from 'fs';
 
-const SUPPORTED_FILES = ['.changelogrc.js', '.changelogrc.json', '.changelogrc'];
+const SUPPORTED_FILES = [
+  '.changelogrc.cjs',
+  '.changelogrc.js',
+  '.changelogrc.json',
+  '.changelogrc',
+];
 
 let cachedConfig: Ghostwriter.Models.Configuration;
 
@@ -21,9 +26,10 @@ export const getConfiguration = (): Ghostwriter.Models.Configuration => {
     );
   }
 
-  const config: Partial<Ghostwriter.Models.Configuration> = configPath.endsWith('.js')
-    ? require(configPath)
-    : JSON.parse(readFileSync(configPath).toString());
+  const config: Partial<Ghostwriter.Models.Configuration> =
+    configPath.endsWith('.cjs') || configPath.endsWith('.js')
+      ? require(configPath)
+      : JSON.parse(readFileSync(configPath).toString());
 
   config.scopes =
     config.scopes?.map((scope) => {

@@ -1,4 +1,5 @@
 # Artifacts
+**/coverage/
 **/dist/
 **/test-results/
 
@@ -7,3 +8,6 @@
 
 # Dependencies
 **/node_modules/
+
+# Editors
+.vscode/
