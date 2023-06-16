@@ -1,5 +1,12 @@
 # cz-ghostwriter
 
+## 1.3.0
+
+### Minor Changes
+
+- [`a19fe2b`](https://github.com/JSanchezIO/JSanchezIO/commit/a19fe2be5d862a59ac54314e15ff0b2d8cfda0cf)
+  Thanks [@JSanchezIO](https://github.com/JSanchezIO)! - Add support for .cjs
+
 ## 1.2.2
 
 ### Patch Changes
