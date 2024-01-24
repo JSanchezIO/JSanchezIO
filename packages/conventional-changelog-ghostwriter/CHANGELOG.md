@@ -1,5 +1,12 @@
 # conventional-changelog-ghostwriter
 
+## 1.3.0
+
+### Minor Changes
+
+- [`c6f46a4`](https://github.com/JSanchezIO/JSanchezIO/commit/c6f46a4c1ac396df3b0a4f92f7ed162cac3c58f0)
+  Thanks [@JSanchezIO](https://github.com/JSanchezIO)! - Add Support for Conventional Changelogs v4
+
 ## 1.2.0
 
 ### Minor Changes
