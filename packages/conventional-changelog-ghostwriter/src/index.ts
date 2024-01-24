@@ -12,4 +12,4 @@ export default async function createPreset() {
   };
 }
 
-export { conventionalChangelog, recommendedBumpOpts, parserOpts, writerOpts };
+export { conventionalChangelog, parserOpts, recommendedBumpOpts, writerOpts };
