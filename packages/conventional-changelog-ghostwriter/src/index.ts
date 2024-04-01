@@ -3,7 +3,7 @@ import recommendedBumpOpts from './conventional-recommended-bump';
 import parserOpts from './parser-opts';
 import writerOpts from './writer-opts';
 
-export default async function createPreset() {
+async function createPreset() {
   return {
     parserOpts,
     writerOpts,
@@ -12,4 +12,10 @@ export default async function createPreset() {
   };
 }
 
-export { conventionalChangelog, parserOpts, recommendedBumpOpts, writerOpts };
+createPreset.conventionalChangelog = conventionalChangelog;
+createPreset.default = createPreset;
+createPreset.parserOpts = parserOpts;
+createPreset.recommendedBumpOpts = recommendedBumpOpts;
+createPreset.writerOpts = writerOpts;
+
+export = createPreset;
