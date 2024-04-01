@@ -1,5 +1,13 @@
 # conventional-changelog-ghostwriter
 
+## 1.3.1
+
+### Patch Changes
+
+- [`2d34b7430986103f851f07d2057315c61267f61a`](https://github.com/JSanchezIO/JSanchezIO/commit/2d34b7430986103f851f07d2057315c61267f61a)
+  Thanks [@JSanchezIO](https://github.com/JSanchezIO)! - Adjust export to ensure compatibility with
+  existing consumers and Semantic Release
+
 ## 1.3.0
 
 ### Minor Changes
