@@ -5,17 +5,21 @@ import writerOpts from './writer-opts';
 
 async function createPreset() {
   return {
-    parserOpts,
-    writerOpts,
-    recommendedBumpOpts,
     conventionalChangelog,
+    parser: parserOpts,
+    parserOpts,
+    recommendedBumpOpts,
+    writer: writerOpts,
+    writerOpts,
   };
 }
 
 createPreset.conventionalChangelog = conventionalChangelog;
 createPreset.default = createPreset;
+createPreset.parser = parserOpts;
 createPreset.parserOpts = parserOpts;
 createPreset.recommendedBumpOpts = recommendedBumpOpts;
+createPreset.writer = writerOpts;
 createPreset.writerOpts = writerOpts;
 
 export = createPreset;
