@@ -1,5 +1,12 @@
 # conventional-changelog-ghostwriter
 
+## 1.3.2
+
+### Patch Changes
+
+- [`161a698d61e231c0be5ebcf2950f4bdb1c85ff39`](https://github.com/JSanchezIO/JSanchezIO/commit/161a698d61e231c0be5ebcf2950f4bdb1c85ff39)
+  Thanks [@JSanchezIO](https://github.com/JSanchezIO)! - Fix support for semantic-release v24
+
 ## 1.3.1
 
 ### Patch Changes
