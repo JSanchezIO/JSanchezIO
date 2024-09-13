@@ -1,5 +1,13 @@
 # commitlint-config-ghostwriter
 
+## 1.1.3
+
+### Patch Changes
+
+- Updated dependencies
+  [[`161a698d61e231c0be5ebcf2950f4bdb1c85ff39`](https://github.com/JSanchezIO/JSanchezIO/commit/161a698d61e231c0be5ebcf2950f4bdb1c85ff39)]:
+  - conventional-changelog-ghostwriter@1.3.2
+
 ## 1.1.2
 
 ### Patch Changes
